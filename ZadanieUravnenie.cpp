@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    float b, c;
+    int b, c;
     cin >> b >> c;
     if (b != 0) {
         cout << -c / b << endl;
