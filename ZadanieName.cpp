@@ -1,12 +1,16 @@
-﻿#include <iostream>
-
+#include <iostream>
+#include <string>
 
 using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "RU");
+//определение переменной
     string a;
+//запрос ввода пользователя
+    cout << "Введите ваше имя: ";
     cin >> a;
-    cout << a << endl;
-
+//вывод внесенных данных
+    cout << "Ваше имя: " << a << endl;
 }
