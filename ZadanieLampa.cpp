@@ -1,22 +1,48 @@
 #include <iostream>
-#include <cmath>
+#include <string>
+
 
 using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "Russian");
+    //определение переменных
+    char t;
     bool d, s, l;
-    cin >> d >> s >> l;
-    if ((d == 1) and (s == 0)) {
-        cout << "Light";
+    //запрос ввода пользователя
+    cout << "Сейчас день? (Y/N): ";
+    cin >> t;
+    //обработка введенного значения
+    if (tolower(t) == 'y') { d = 1; }
+    else if (tolower(t) == 'n') { d = 0; }
+    else {
+        cout << "Некорректный ввод";
+        return 0;
     }
-    else if ((d == 1) and (l == 0)) {
-        cout << "Dark";
+    cout << "Шторы раздвинуты? (Y/N): ";
+    cin >> t;
+    //обработка введенного значения
+    if (tolower(t) == 'y') { s = 1; }
+    else if (tolower(t) == 'n') { s = 0; }
+    else {
+        cout << "Некорректный ввод";
+        return 0;
     }
-    else if (l == 1) {
-        cout << "Light";
+    cout << "Лампа включена? (Y/N): ";
+    cin >> t;
+    //обработка введенного значения
+    if (tolower(t) == 'y') { l = 1; }
+    else if (tolower(t) == 'n') { l = 0; }
+    else {
+        cout << "Некорректный ввод";
+        return 0;
+    }
+    //формула определяющая освещение комнаты
+    if ((d * s) + l){
+        cout << "Сейчас светло";
     }
     else {
-        cout << "Dark";
+        cout << "Сейчас темно";
     }
 }
