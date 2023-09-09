@@ -12,9 +12,12 @@ int main()
 	cout << "Введите произвольные x и a в формате 'x a': ";
 	cin >> x >> a;
 	if (abs(x) < 1) {
-		cout << "Какой-то w =" <<a * log(abs(x));
+		cout << "Какой-то w =" << a * log(abs(x));
+	}
+	else if (not(a < pow(x, 2))) {
+		cout << "Какой-то w =" << sqrt(a - pow(x, 2));
 	}
 	else {
-		cout << "Какой-то w =" << sqrt(a - pow(x, 2));
+		cout << "Корень из отрицательного числа";
 	}
 }
