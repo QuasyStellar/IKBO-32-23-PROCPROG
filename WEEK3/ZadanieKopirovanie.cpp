@@ -9,13 +9,13 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	string str;
+	string str, enter;
 	ofstream file;
+	cout << "Введите текст для записи в файл: ";
 	file.open("textfile.txt");
-	file << "Запись в файл"<< endl;
-	file << "еЩЕ ЗАпИсь";
+	getline(cin, enter);
+	file << enter;
 	file.close();
-	char buff;
 	ifstream files("textfile.txt");
 	if (files.is_open()) {
 		while (getline(files, str)) {
