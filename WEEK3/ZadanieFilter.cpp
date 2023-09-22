@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <algorithm>
+#include <cmath>
 
 
 using namespace std;
@@ -9,25 +9,27 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	string str;
-	bool flag = 1;
-	cout << "Введите строку из 30 букв: ";    //dfghrtyrjtlkejlkdfjglkjdfgjkhy пример строки
-	cin >> str;
-	if (str.size() == 30) {
-		for (int i = 0; i < str.size(); i++) {
-			if (!isalpha(str[i])) {
-				flag = 0;
+	ofstream file;
+	string str, ans, enter;
+	file.open("textfile.txt");
+	cout << "Введите текст для записи в файл: ";
+	getline(cin, enter);
+	file << enter;
+	file.close();
+	ifstream files("textfile.txt");
+	if (files.is_open()) {
+		while (getline(files, str)) {
+			ans = "";
+			for (int i = 0; i < str.size(); i++) {
+				if (isdigit(str[i])) {
+					ans += str[i];
+				}
 			}
+			cout << ans << endl;
 		}
-		if (flag) {
-			sort(str.begin(), str.end());
-			cout << str;
-		}
-		else{
-			cout << "В строке не только буквы";
-		}
+		files.close();
 	}
 	else {
-		cout << "Длина строки не 30 символов";
+		cout << "Файл не был открыт из-за ошибки";
 	}
 }
