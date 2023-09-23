@@ -1,19 +1,29 @@
-long double S2, n2, p2, r2, m2, m0;
-        cout << "Введите положительные S, n, m0" << endl;
-        cin >> S2 >> n2 >> m0;
-        p2 = 0.05;
-        m2 = 0;
-        if ((S2 > 0) && (n2 > 0) && (m0 > 0)) 
+#include <iostream>
+#include <string>
+#include <cmath>
+
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+    long double S, n, p, r, m1, m;
+    cout << "Введите ссуду, месячные выплаты и кол-во лет в формате 'S m n': ";
+    cin >> S >> m >> n;
+    p = 0.01;
+    m1 = 0;
+    if ((S > 0) && (p > 0) && (m > 0))
+    {
+        while (abs((m1 - m) < 0.01))
         {
-            while (abs((m2 - m0) < 1))
-            {
-                r2 = p2 / 100;
-                m2 = (S2 * r2 * pow((1 + r2), n2) / (12 * (pow((1 + r2), n2) - 1)));
-                p2 += 0.05;
-            }
-            if (p2 > 100)
-                cout << "Нет решений в диапазоне p(1-100)" << endl;
-            else
-                cout << "P = " << p2 << endl;
+            r = p / 100;
+            m1 = (S * r * pow((1 + r), n) / (12 * (pow((1 + r), n) - 1)));
+            p += 0.01;
         }
-    
+        if (p > 100)
+            cout << "Невозможно вычислить" << endl;
+        else
+            cout << "Процент P = " << p << endl;
+    }
+}
