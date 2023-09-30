@@ -9,19 +9,30 @@ int main()
             if (0 == i % 2) {
                 for (int j = 0; j < 8; ++j)
                 {
-                    std::cout << "  *";
+                    cout << "   *";
                 }
-                cout << " ==========================================" << endl << "                                                                   " << endl;
+                for (int j = 0; j < 58; ++j)
+                {
+                    cout << "=";
+                }
+                cout << endl << endl ;
             }
             else {
-                std::cout << " ";
                 for (int j = 0; j < 8; ++j)
-                    std::cout << "*  ";
-                cout << "==========================================" << endl << "                                                                   " << endl;
+                    cout << "*   ";
+                for (int j = 0; j < 58; ++j)
+                {
+                    cout << "=";
+                }
+                cout << endl << endl;
             }
         }
         else {
-            cout <<  "===================================================================" << endl << "                                                                   " << endl;
+            for (int j = 0; j < 90; ++j)
+                {
+                    cout << "=";
+                }
+            cout << endl << endl;
         }
     }
 }
