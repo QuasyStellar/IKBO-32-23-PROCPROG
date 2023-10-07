@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// Функция для перевода цифры из символа в число
 int charToInt(char c) {
     if (c >= '0' && c <= '9') {
         return c - '0';
@@ -13,15 +12,13 @@ int charToInt(char c) {
     } else if (c >= 'a' && c <= 'f') {
         return c - 'a' + 10;
     }
-    return -1; // Недопустимый символ
+    return -1;
 }
 
-// Функция для перевода числа из одной системы счисления в десятичную
 int convertToDecimal(string num, int base) {
     int decimalNum = 0;
     int power = 0;
 
-    // Начиная с последней цифры числа, умножаем каждую цифру на соответствующую степень основания
     for (int i = num.length() - 1; i >= 0; i--) {
         int digit = charToInt(num[i]);
         if (digit == -1 || digit >= base) {
@@ -35,7 +32,6 @@ int convertToDecimal(string num, int base) {
     return decimalNum;
 }
 
-// Функция для перевода числа из десятичной системы в другую
 string convertFromDecimal(int num, int newBase) {
     string result = "";
 
