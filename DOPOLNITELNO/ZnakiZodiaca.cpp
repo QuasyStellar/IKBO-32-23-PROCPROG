@@ -1,356 +1,160 @@
 #include<iostream>
-#include <cmath>
-
+#include<cmath>
 using namespace std;
-
-int main()
-{
-    double y, d, m;
-    cout << "вводите числа в формате y m d, не спользуйте незначащие нули в левой части числа" << endl;
-    cout << "Введите год рождения: ";
-    cin >> y;
-    
-    if (y > 0 && round(y) == y) {
-        if ((y / 4 == 0 && y / 100 != 0) || (y / 400 == 0) || (y == 2000)) {
-            cout << "вводи месяц";
-            cin >> m;
-            if (m > 0 && m < 13 && round(m) == m){
-                switch(int(m)){
-                    case 1:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 20 && d <= 31)){
-                        cout << "водолей 20.01-18.02";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 19)){
-                        cout << "козерог 22.12-19.01";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 2:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 19 && d <= 29)){
-                        cout << "рыбы 19.02-20.03";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 18)){
-                        cout << "водолей 20.01-18.02";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 3:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 21 && d <= 31)){
-                        cout << "овен 21.03-19.04";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 20)){
-                        cout << "рыбы 19.02-20.03";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 4:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 20 && d <= 30)){
-                        cout << "телец 20.04-20.05";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 19)){
-                        cout << "овен 21.03-19.04";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 5:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 21 && d <= 31)){
-                        cout << "близнецы 21.05-21.06";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 20)){
-                        cout << "телец 20.04-20.05";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 6:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 22 && d <= 30)){
-                        cout << "рак 22.06-22.07";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 21)){
-                        cout << "близнецы 21.05-21.06";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 7:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 23 && d <= 31)){
-                        cout << "лев 23.07-22.08";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 22)){
-                        cout << "рак 22.06-22.07";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 8:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 23 && d <= 31)){
-                        cout << "дева 23.08-22.09";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 22)){
-                        cout << "лев 23.07-22.08";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 9:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 23 && d <= 30)){
-                        cout << "весы 23.09-22.10";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 22)){
-                        cout << "дева 23.08-22.09";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 10:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 23 && d <= 31)){
-                        cout << "скорпион 23.10-21.11";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 22)){
-                        cout << "весы 23.09-22.10";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 11:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 22 && d <= 30)){
-                        cout << "стрелец 23.11-21.12";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 21)){
-                        cout << "скорпион 23.10-21.11";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 12:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 22 && d <= 31)){
-                        cout << "козерог 22.12-19.01";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 21)){
-                        cout << "стрелец 23.11-21.12";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                }
-            }
-            else {
-                cout << "error.uwu";
-            }
-            return 1;
-        }
-        else {
-            cout << "вводи месяц";
-            cin >> m;
-            if (m > 0 && m < 13 && round(m) == m){
-                switch(int(m)){
-                    case 1:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 20 && d <= 31)){
-                        cout << "водолей 20.01-18.02";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 19)){
-                        cout << "козерог 22.12-19.01";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 2:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 19 && d <= 29)){
-                        cout << "рыбы 19.02-20.03";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 18)){
-                        cout << "водолей 20.01-18.02";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 3:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 21 && d <= 31)){
-                        cout << "овен 21.03-19.04";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 20)){
-                        cout << "рыбы 19.02-20.03";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 4:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 20 && d <= 30)){
-                        cout << "телец 20.04-20.05";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 19)){
-                        cout << "овен 21.03-19.04";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 5:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 21 && d <= 31)){
-                        cout << "близнецы 21.05-21.06";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 20)){
-                        cout << "телец 20.04-20.05";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 6:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 22 && d <= 30)){
-                        cout << "рак 22.06-22.07";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 21)){
-                        cout << "близнецы 21.05-21.06";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 7:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 23 && d <= 31)){
-                        cout << "лев 23.07-22.08";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 22)){
-                        cout << "рак 22.06-22.07";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 8:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 23 && d <= 31)){
-                        cout << "дева 23.08-22.09";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 22)){
-                        cout << "лев 23.07-22.08";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 9:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 23 && d <= 30)){
-                        cout << "весы 23.09-22.10";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 22)){
-                        cout << "дева 23.08-22.09";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 10:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 23 && d <= 31)){
-                        cout << "скорпион 23.10-21.11";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 22)){
-                        cout << "весы 23.09-22.10";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 11:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 22 && d <= 30)){
-                        cout << "стрелец 23.11-21.12";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 21)){
-                        cout << "скорпион 23.10-21.11";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                    case 12:
-                    cout << "вводи день";
-                    cin >> d;
-                    if (round(d) == d && (d >= 22 && d <= 31)){
-                        cout << "козерог 22.12-19.01";
-                    }
-                    else if (round(d) == d && (d >= 1 && d <= 21)){
-                        cout << "стрелец 23.11-21.12";
-                    }
-                    else {
-                        cout << "error.uwu";
-                    }
-                    break;
-                }
-            }
-            else {
-                cout << "error.uwu";
-            }
-            return 1;
-        }
-    }
-    else {
-        cout << "error.uwu";
-    }
-    
-    return 0;
+int yearseychas, monthseychas, dayseychas;
+float yearq, monthq, dayq;
+int visokosniy(int yearsos) {
+	if ((yearsos % 4 == 0) and ((yearsos % 100 != 0) or (yearsos % 400 == 0))) { return true; }
+	else { return false; }
+}
+int year(int years) {
+	if (years == yearq and years > 0) { return true; }
+	else { return false; }
+}
+int month(int months) {
+	if (months == monthq and months <= 12 and months > 0) { return true; }
+	else { return false; }
+}
+int day(int days) {
+	if (days == dayq and days > 0) {
+		switch (monthseychas) {
+		case 1: {
+			if (days <= 31) { return true; }
+			else { return false; }
+		}
+		case 2: {
+			if (visokosniy(yearseychas)) {
+				if (days <= 29) { return true; }
+				else { return false; }
+			}
+			else {
+				if (days <= 28) { return true; }
+				else { return false; }
+			}
+		}
+		case 3: {
+			if (days <= 31) { return true; }
+			else { return false; }
+		}
+		case 4: {
+			if (days <= 30) { return true; }
+			else { return false; }
+		}
+		case 5: {
+			if (days <= 31) { return true; }
+			else { return false; }
+		}
+		case 6: {
+			if (days <= 30) { return true; }
+			else { return false; }
+		}
+		case 7: {
+			if (days <= 31) { return true; }
+			else { return false; }
+		}
+		case 8: {
+			if (days <= 31) { return true; }
+			else { return false; }
+		}
+		case 9: {
+			if (days <= 30) { return true; }
+			else { return false; }
+		}
+		case 10: {
+			if (days <= 31) { return true; }
+			else { return false; }
+		}
+		case 11: {
+			if (days <= 30) { return true; }
+			else { return false; }
+		}
+		case 12: {
+			if (days <= 31) { return true; }
+			else { return false; }
+		}
+		default: {
+			return false;
+		}
+		}
+	}
+	else {
+		return false;
+	}
+	return 0;
+}
+int znakzodiaka(int deys) {
+	switch (monthseychas) {
+	case 1: {
+		if (deys >= 1 and deys <= 20) { cout << "Знак зодиака: Козерог"; }
+		else { cout << "Знак зодиака: Водолей"; }
+		break;
+	}
+	case 2: {
+		if (deys >= 1 and deys <= 19) { cout << "Знак зодиака: Водолей"; }
+		else { cout << "Знак зодиака: Рыбы"; }
+		break;
+	}
+	case 3: {
+		if (deys >= 1 and deys <= 20) { cout << "Знак зодиака: Рыбы"; }
+		else { cout << "Знак зодиака: Овен"; }
+		break;
+	}
+	case 4: {
+		if (deys >= 1 and deys <= 20) { cout << "Знак зодиака: Овен"; }
+		else { cout << "Знак зодиака: Телец"; }
+		break;
+	}
+	case 5: {
+		if (deys >= 1 and deys <= 21) { cout << "Знак зодиака: Телец"; }
+		else { cout << "Знак зодиака: Близнецы"; }
+		break;
+	}
+	case 6: {
+		if (deys >= 1 and deys <= 21) { cout << "Знак зодиака: Близнецы"; }
+		else { cout << "Знак зодиака: Рак"; }
+		break;
+	}
+	case 7: {
+		if (deys >= 1 and deys <= 22) { cout << "Знак зодиака: Рак"; }
+		else { cout << "Знак зодиака: Лев"; }
+		break;
+	}
+	case 8: {
+		if (deys >= 1 and deys <= 21) { cout << "Знак зодиака: Лев"; }
+		else { cout << "Знак зодиака: Дева"; }
+		break;
+	}
+	case 9: {
+		if (deys >= 1 and deys <= 23) { cout << "Знак зодиака: Дева"; }
+		else { cout << "Знак зодиака: Весы"; }
+		break;
+	}
+	case 10: {
+		if (deys >= 1 and deys <= 23) { cout << "Знак зодиака: Весы"; }
+		else { cout << "Знак зодиака: Скорпион"; }
+		break;
+	}
+	case 11: {
+		if (deys >= 1 and deys <= 22) { cout << "Знак зодиака: Скорпион"; }
+		else { cout << "Знак зодиака: Стрелец"; }
+		break;
+	}
+	case 12: {
+		if (deys >= 1 and deys <= 22) { cout << "Знак зодиака: Стрелец"; }
+		else { cout << "Знак зодиака: Козерог"; }
+		break;
+	}
+	}
+	return 0;
+}
+int main() {
+	setlocale(0, "");
+	cout << "Введите год: "; cin >> yearq; cout << "Введите месяц: "; cin >> monthq; cout << "Введите день: "; cin >> dayq;
+	yearseychas = round(yearq); monthseychas = round(monthq); dayseychas = round(dayq);
+	if (year(yearseychas) and month(monthseychas) and day(dayseychas)) {
+		znakzodiaka(dayseychas);
+	}
+	else {
+		cout << "Ввод некорректных значений";
+	}
 }
