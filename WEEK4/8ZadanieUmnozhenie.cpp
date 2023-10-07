@@ -23,7 +23,7 @@ float comis(int chi) {
 	}
 }
 int main() {
-	setlocale(0, "");
+	setlocale(LC_ALL, "ru-RU");
 	list <float> a1 = { 5, 2, 0, 10 }; list <float> a2 = { 3, 5, 2, 5 }; list <float> a3 = { 20, 0, 0, 0 };
 	int i = 0;
 	for (auto s : a1) { i++; a11 += cena(i) * s; } i = 0;
