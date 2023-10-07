@@ -46,6 +46,7 @@ string convertFromDecimal(int num, int newBase) {
 }
 
 int main() {
+    setlocale(LC_ALL, "ru-RU");
     string inputNum;
     int oldBase, newBase;
 
