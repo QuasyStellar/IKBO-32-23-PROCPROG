@@ -34,7 +34,7 @@ int main() {
 
         if (currentValue < prevValue) {
             isVichet = true;
-            if (prevValue / currentValue != 10 && prevValue / currentValue != 5) {
+            if ((prevValue / currentValue != 10 and prevValue / currentValue != 5) or (currentValue != 1 and currentValue != 10 and currentValue != 100)) {
                 isValid = false;
                 break;
             }
