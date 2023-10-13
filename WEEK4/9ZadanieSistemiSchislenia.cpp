@@ -99,6 +99,4 @@ int main() {
         string result = convertFromDecimal(decimalNum, newBase);
         cout << "Результат: " << result << endl;
     }
-
-    return 0;
 }
