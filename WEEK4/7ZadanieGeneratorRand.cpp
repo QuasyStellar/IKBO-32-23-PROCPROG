@@ -3,31 +3,29 @@ using namespace std;
 
 
 int pseudoRandomGenerator(int m, int b, int c, int s, int n) {
-    if (n == 0) {
-        return s;
+    if (n <= s) {
+        return 0;
     }
-
-    s = (m * s + b) % c;
-    cout << s << " ";
-    return pseudoRandomGenerator(m, b, c, s, n - 1);
+    cout << (m * s + b) % c << " ";
+    return pseudoRandomGenerator(m, b, c, s+1, n);
 }
 
-int main() {
+int main() { 
+    setlocale(LC_ALL, "ru-RU");
+    int s = 0;
     int m1 = 37;
     int b1 = 3;
     int c1 = 64;
-    int s0_1 = 0;
-    int n1 = 10;
-    cout << "Sequence 1: ";
-    pseudoRandomGenerator(m1, b1, c1, s0_1, n1);
+    int n;
+    cout << "Введите кол-во чисел: ";
+    cin >> n;
+    cout << "Числа вариант 1: ";
+    pseudoRandomGenerator(m1, b1, c1, s, n);
     cout << endl;
 
     int m2 = 25173;
     int b2 = 13849;
     int c2 = 65537;
-    int s0_2 = 0;
-    int n2 = 10;
-    cout << "Sequence 2: ";
-    pseudoRandomGenerator(m2, b2, c2, s0_2, n2);
-    cout << endl;
+    cout << "Числа вариант 2: ";
+    pseudoRandomGenerator(m2, b2, c2, s, n);
 }
