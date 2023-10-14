@@ -3,6 +3,7 @@ using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "ru-RU");
     double A[3][4] = {
         {5, 2, 0, 10},
         {3, 5, 2, 5},
@@ -12,7 +13,7 @@ int main()
         {2.8, 0.4},
         {5, 1},
         {2, 1.5} };
-    double C[3][2] = {0};
+    double C[3][2] = { 0 };
     int maxProd = 0;
     int minProd = 0;
     double maxMoney = 0;
@@ -23,7 +24,7 @@ int main()
     double sumComss = 0;
     double allMoney = 0;
 
-    for (int x = 0; x < 3; x++) { 
+    for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 2; y++) {
             for (int i = 0; i < 4; i++) {
                 C[x][y] += A[x][i] * B[i][y];
@@ -31,7 +32,7 @@ int main()
         }
     }
 
-    for (int x = 0; x < 3; x++) { 
+    for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 2; y++) {
             cout << C[x][y] << "         ";
         }
