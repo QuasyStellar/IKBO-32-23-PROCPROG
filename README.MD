@@ -4,7 +4,7 @@
 ✅ - принято, 🟡 - не проверено, 🛠️ - не сделано, X - номера задания нет.
 
 
-| Номер задания |[доп. Задания](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/DOPOLNITELNO) |[Д/з 1](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/WEEK1) | [Д/з 2](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/WEEK2) | [Д/з 3](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/WEEK3) | [Д/з 4](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/WEEK4)|[Д/з 5](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/WEEK5)|
+| Номер задания |[доп. Задания](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/DOPOLNITELNO) |[Д/з 1](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW1) | [Д/з 2](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW2) | [Д/з 3](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW3) | [Д/з 4](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW4)|[Д/з 5](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW5)|
 | ------------- | ------------- |------------- | ------------- | ------------- | ------------- | ------------- |
 | 1 | ✅ |✅ | ✅ | ✅ | ✅ |🛠️ |
 | 2 | 🛠️ |✅ | ✅ | ✅ | ✅|🛠️ |
