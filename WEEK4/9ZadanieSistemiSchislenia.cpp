@@ -5,7 +5,7 @@
 using namespace std;
 
 int charToInt(char symbol) {
-	switch (symbol){
+	switch (symbol) {
 	case '0': return 0; break;
 	case '1': return 1; break;
 	case '2': return 2; break;
@@ -50,53 +50,54 @@ char intTochar(int symbol) {
 }
 
 int convertToDecimal(string num, int base) {
-    int decimalNum = 0;
-    int power = 0;
+	int decimalNum = 0;
+	int power = 0;
 
-    for (int i = num.length() - 1; i >= 0; i--) {
-        int digit = charToInt(num[i]);
-        if (digit == -1 or digit >= base) {
-            cout << "Ошибка: недопустимая цифра в числе." << endl;
-            return -1;
-        }
-        decimalNum += digit * pow(base, power);
-        power++;
-    }
+	for (int i = num.length() - 1; i >= 0; i--) {
+		int digit = charToInt(num[i]);
+		if (digit == -1 or digit >= base) {
+			cout << "Ошибка: недопустимая цифра в числе." << endl;
+			return -1;
+		}
+		decimalNum += digit * pow(base, power);
+		power++;
+	}
 
-    return decimalNum;
+	return decimalNum;
 }
 
 string convertFromDecimal(int num, int newBase) {
-    string result = "";
-    while (num > 0) {
-        int remainder = num % newBase;
+	string result = "";
+	while (num > 0) {
+		int remainder = num % newBase;
 		char digit = intTochar(remainder);
-		if (digit ==  '-1') {
+		if (digit == '-1') {
 			return  "Ошибка: недопустимая цифра в числе.";
 		}
-        result = intTochar(remainder) + result;
-        num /= newBase;
-    }
+		result = intTochar(remainder) + result;
+		num /= newBase;
+	}
 
-    return result;
+	return result;
 }
 
 int main() {
-    setlocale(LC_ALL, "ru-RU");
-    string inputNum;
-    int oldBase, newBase;
+	setlocale(LC_ALL, "ru-RU");
+	string inputNum;
+	float oldBase, newBase;
 
-    cout << "Введите число: ";
-    cin >> inputNum;
-    cout << "Введите текущую систему счисления (от 2 до 16): ";
-    cin >> oldBase;
-    cout << "Введите новую систему счисления (от 2 до 16): ";
-    cin >> newBase;
+	cout << "Введите число: ";
+	cin >> inputNum;
+	cout << "Введите текущую систему счисления (от 2 до 16): ";
+	cin >> oldBase;
+	if (oldBase != round(oldBase)) { cout << "Некорректная система"; return 0; }
+	cout << "Введите новую систему счисления (от 2 до 16): ";
+	cin >> newBase;
+	if (newBase != round(newBase)) { cout << "Некорректная система"; return 0; }
+	int decimalNum = convertToDecimal(inputNum, int(oldBase));
 
-    int decimalNum = convertToDecimal(inputNum, oldBase);
-
-    if (decimalNum != -1) {
-        string result = convertFromDecimal(decimalNum, newBase);
-        cout << "Результат: " << result << endl;
-    }
+	if (decimalNum != -1) {
+		string result = convertFromDecimal(decimalNum, int(newBase));
+		cout << "Результат: " << result << endl;
+	}
 }
