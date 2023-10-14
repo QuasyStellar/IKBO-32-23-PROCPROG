@@ -13,7 +13,6 @@ int pseudoRandomGenerator(int m, int b, int c, int s, int n) {
 }
 
 int main() {
-    // Для I варианта:
     int m1 = 37;
     int b1 = 3;
     int c1 = 64;
@@ -23,7 +22,6 @@ int main() {
     pseudoRandomGenerator(m1, b1, c1, s0_1, n1);
     cout << endl;
 
-    // Для II варианта:
     int m2 = 25173;
     int b2 = 13849;
     int c2 = 65537;
