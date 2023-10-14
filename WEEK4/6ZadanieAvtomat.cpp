@@ -16,7 +16,7 @@ int romanToNumber(char romanChar) {
 }
 
 int main() {
-    setlocale(LC_ALL, "ru-RU");
+    setlocale(LC_ALL, "");
     int decimal = 0, prevValue = 0, count = 1;
     bool isValid = true, isVichet = false;
     string input;
@@ -52,6 +52,7 @@ int main() {
             }
         }
         else {
+            isVichet = false;
             count = 1;
         }
 
