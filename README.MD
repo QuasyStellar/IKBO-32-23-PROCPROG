@@ -6,8 +6,8 @@
 
 | Номер задания |[доп. Задания](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/DOPOLNITELNO) |[Д/з 1](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW1) | [Д/з 2](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW2) | [Д/з 3](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW3) | [Д/з 4](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW4)|[Д/з 5](https://github.com/QuasyStellar/IKBO-32-23-PROCPROG/tree/main/HW5)|
 | ------------- | ------------- |------------- | ------------- | ------------- | ------------- | ------------- |
-| 1 | ✅ |✅ | ✅ | ✅ | ✅ |🛠️ |
-| 2 | 🛠️ |✅ | ✅ | ✅ | ✅|🛠️ |
+| 1 | ✅ |✅ | ✅ | ✅ | ✅ |✅ |
+| 2 | 🛠️ |✅ | ✅ | ✅ | ✅| 🟡 |
 | 3 | 🛠️ |✅ | ✅ | ✅ | ✅ |🛠️ |
 | 4 | 🛠️ |✅ | ✅ | ✅ |✅|🛠️ |
 | 5 | 🛠️ |✅ | ✅ | ✅| ✅|🛠️ |
