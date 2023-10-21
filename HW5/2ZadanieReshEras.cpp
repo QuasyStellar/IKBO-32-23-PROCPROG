@@ -15,14 +15,14 @@ int main() {
         }
         is_prime[0] = is_prime[1] = false;
 
-        for (int m = 2; m < n; m++) {
-            for (int j = m * 2; j < n; j += m) {
+        for (int m = 2; m <= n; m++) {
+            for (int j = m * 2; j <= n; j += m) {
                 is_prime[j] = false;
             }
         }
 
         cout << "Простые числа в диапазоне от 2 до " << n << ": ";
-        for (int i = 2; i < n; i++) {
+        for (int i = 2; i <= n; i++) {
             if (is_prime[i]) {
                 cout << i << " ";
             }
