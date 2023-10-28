@@ -3,6 +3,7 @@
 using namespace std;
 
 int main() {
+    setlocale(LC_ALL, "");
     int A, B, C, ans;
     cout << "Введите стоимость основания спиннера, стоимость одной лопасти и максимальная стоимость всего спиннера 'A B C': ";
     cin >> A >> B >> C;
