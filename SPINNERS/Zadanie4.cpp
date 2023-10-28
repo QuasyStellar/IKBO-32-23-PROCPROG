@@ -2,35 +2,35 @@
 #include <cmath>
 using namespace std;
 
-int CoupeNumber(int k) {
-	if (k > 36) {
-		return 8 - (k - 37) / 2;
+int inds(int n) {
+	if (n > 36) {
+		return 8 - (n - 37) / 2;
 	}
 	else {
-		return (k - 1) / 4;
+		return (n - 1) / 4;
 	}
 }
 
 int main() {
     setlocale(LC_ALL, "");
-	int coupe[9];
-	int N, place, result = 0, curr = 0;
+	int kupe[9];
+	int N, m, result = 0, temp = 0;
 	cout << "Введите кол-во свободных мест: ";
 	cin >> N;
 
 	for (int i = 0; i < N; i++) {
-		cin >> place;
-		coupe[CoupeNumber(place)] += 1;
+		cin >> m;
+		kupe[inds(m)] += 1;
 	}
 	for (int i = 0; i < 9; i++) {
-		if (coupe[i] == 6) {
-			curr += 1;
-			if (result > curr){
-				result = curr;
+		if (kupe[i] == 6) {
+			temp += 1;
+			if (result > temp){
+				result = temp;
 			}
 		}
 		else {
-			curr = 0;
+			temp = 0;
 		}
 	}
 	cout << "Макс. число идущих подряд свободных купе: "<<result << endl;
