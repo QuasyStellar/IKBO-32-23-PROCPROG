@@ -5,10 +5,10 @@ int main() {
     long long N, K;
     cin >> N >> K;
 
-    long long free_seats = N - 2; // Число свободных мест
+    long long free_seats = N - 2;
 
     if (free_seats < K) {
-        cout << "0 0"; // Если школьников больше, чем свободных мест
+        cout << "0 0";
     } else {
         long long side_seats, middle_seats;
 
@@ -22,7 +22,5 @@ int main() {
 
         cout << side_seats << " " << side_seats + middle_seats;
     }
-
-    retur
-      n 0;
+    return 0;
 }
