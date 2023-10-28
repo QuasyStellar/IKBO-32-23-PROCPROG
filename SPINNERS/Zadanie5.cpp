@@ -1,26 +1,14 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    long long N, K;
-    cin >> N >> K;
-
-    long long free_seats = N - 2;
-
-    if (free_seats < K) {
-        cout << "0 0";
-    } else {
-        long long side_seats, middle_seats;
-
-        if ((N - K) % 2 == 0) {
-            side_seats = (N - K) / 2;
-            middle_seats = 1;
-        } else {
-            side_seats = (N - K) / 2;
-            middle_seats = 0;
-        }
-
-        cout << side_seats << " " << side_seats + middle_seats;
-    }
-    return 0;
+int main () {
+    setlocale(LC_ALL, "");
+	int sv, sh;
+	cout << "Введите ко-во свободных мест и детей: ";
+	cin >> sv >> sh;
+	while (sh != 1) {
+		sv = (sv - sh % 2) / 2;
+		sh = sh / 2;
+	}
+	cout <<"C одной стороны - "<<(sv - 1) / 2 << " места, c другой - " << sv / 2;
 }
