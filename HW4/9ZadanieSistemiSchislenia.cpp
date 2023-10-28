@@ -62,12 +62,14 @@ int convertToDecimal(string num, int base) {
 		decimalNum += digit * pow(base, power);
 		power++;
 	}
-
 	return decimalNum;
 }
 
 string convertFromDecimal(int num, int newBase) {
 	string result = "";
+	if (num == 0) {
+        return "0";
+	}
 	while (num > 0) {
 		int remainder = num % newBase;
 		char digit = intTochar(remainder);
