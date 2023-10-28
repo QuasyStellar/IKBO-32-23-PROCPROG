@@ -1,37 +1,38 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-int inds(int n) {
-	if (n > 36) {
-		return 8 - (n - 37) / 2;
-	}
-	else {
-		return (n - 1) / 4;
-	}
+int section(int k) {
+    if (k <= 36)
+        return (k - 1) / 4;
+    else
+        return 8 - (k - 37) / 2;
 }
 
 int main() {
-    setlocale(LC_ALL, "");
-	int kupe[9];
-	int N, m, result = 0, temp = 0;
-	cout << "Введите кол-во свободных мест: ";
-	cin >> N;
+    int count[9] = {0};
 
-	for (int i = 0; i < N; i++) {
-		cin >> m;
-		kupe[inds(m)] += 1;
-	}
-	for (int i = 0; i < 9; i++) {
-		if (kupe[i] == 6) {
-			temp += 1;
-			if (result > temp){
-				result = temp;
-			}
-		}
-		else {
-			temp = 0;
-		}
-	}
-	cout << "Макс. число идущих подряд свободных купе: "<<result << endl;
+    int n;
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        int k;
+        cin >> k;
+        count[section(k)]++;
+    }
+
+    int ans = 0;
+    int curr = 0;
+
+    for (int i = 0; i < 9; i++) {
+        if (count[i] == 6) {
+            curr++;
+            ans = max(ans, curr);
+        } else {
+            curr = 0;
+        }
+    }
+
+    cout << ans << endl;
+
+    return 0;
 }
