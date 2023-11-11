@@ -1,26 +1,24 @@
 #include <iostream>
-
-// Функция для вычисления числа Якобсталя
+using namespace std;
 int Jacobsthal(int n) {
     if (n == 0) return 0;
     if (n == 1) return 1;
-    return Jacobsthal(n - 1) + 2 * Jacobsthal(n - 2);
+    if (n > 1) return Jacobsthal(n - 1) + 2 * Jacobsthal(n - 2);
+
 }
 
 int main() {
-    int start, end;
-
-    // Ввод интервала
-    std::cout << "Введите начальное значение интервала: ";
-    std::cin >> start;
-    std::cout << "Введите конечное значение интервала: ";
-    std::cin >> end;
-
-    // Вывод чисел Якобсталя в заданном интервале
-    for (int i = start; i <= end; ++i) {
-        std::cout << Jacobsthal(i) << " ";
+    int m, n;
+    setlocale(LC_ALL, "");
+    cout << "Введите начало и конец интервала: ";
+    cin >> m >> n;
+    cout << "Числа Якобсталя в интервале: ";
+    for (int i = m; i <= n; ++i) {
+        if (Jacobsthal(i) <= n and i != 0){
+            cout << Jacobsthal(i) << " ";
+            }
+        else{
+            return 1;
+        }
     }
-
-    return
-      0;
 }
