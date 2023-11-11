@@ -1,28 +1,24 @@
 #include <iostream>
 
-using namespace std;
+const int MAX_ROWS = 5;
 
 int main() {
-    const int numRows = 10;
-    int triangle[numRows][numRows];
+    // Функция для вычисления чисел Нараяны
+    int narayana_triangle[MAX_ROWS][MAX_ROWS] = {0};
+    narayana_triangle[0][0] = 1;
 
-    // Заполняем треугольник
-    for (int i = 0; i < numRows; ++i) {
-        for (int j = 0; j <= i; ++j) {
-            if (j == 0 || j == i) {
-                triangle[i][j] = 1;
-            } else {
-                triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j] + triangle[i - 1][j + 1];
-            }
+    for (int n = 1; n < MAX_ROWS; ++n) {
+        for (int k = 1; k <= n; ++k) {
+            narayana_triangle[n][k] = narayana_triangle[n - 1][k - 1] + narayana_triangle[n - 1][k] + narayana_triangle[n - 1][k + 1];
         }
     }
 
-    // Выводим треугольник
-    for (int i = 0; i < numRows; ++i) {
-        for (int j = 0; j <= i; ++j) {
-            cout << triangle[i][j] << " ";
+    // Вывод чисел Нараяны
+    for (int n = 0; n < MAX_ROWS; ++n) {
+        for (int k = 0; k <= n; ++k) {
+            std::cout << narayana_triangle[n][k] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 
     return 0;
