@@ -2,20 +2,25 @@
 
 using namespace std;
 
-int narayanaTriangle(int n, int k) {
-    if (k == 0 || k == n) {
-        return 1;
-    } else {
-        return narayanaTriangle(n-1, k-1) + narayanaTriangle(n-1, k) + narayanaTriangle(n-1, k+1);
-    }
-}
-
 int main() {
     const int numRows = 10;
+    int triangle[numRows][numRows];
 
+    // Заполняем треугольник
     for (int i = 0; i < numRows; ++i) {
         for (int j = 0; j <= i; ++j) {
-            cout << narayanaTriangle(i, j) << " ";
+            if (j == 0 || j == i) {
+                triangle[i][j] = 1;
+            } else {
+                triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j] + triangle[i - 1][j + 1];
+            }
+        }
+    }
+
+    // Выводим треугольник
+    for (int i = 0; i < numRows; ++i) {
+        for (int j = 0; j <= i; ++j) {
+            cout << triangle[i][j] << " ";
         }
         cout << endl;
     }
