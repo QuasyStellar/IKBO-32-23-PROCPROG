@@ -1,25 +1,21 @@
 #include <iostream>
 
-const int MAX_ROWS = 5;
+int narayana(int n, int k) {
+    if (n == 0 && k == 0) {
+        return 1;
+    }
+    if (n == 0 || k == 0 || k == n + 1) {
+        return 0;
+    }
+    return narayana(n - 1, k - 1) + narayana(n - 1, k) + narayana(n - 1, k + 1);
+}
 
 int main() {
-    // Функция для вычисления чисел Нараяны
-    int narayana_triangle[MAX_ROWS][MAX_ROWS] = {0};
-    narayana_triangle[0][0] = 1;
+    int n, k;
+    std::cout << "Enter values for n and k: ";
+    std::cin >> n >> k;
 
-    for (int n = 1; n < MAX_ROWS; ++n) {
-        for (int k = 1; k <= n; ++k) {
-            narayana_triangle[n][k] = narayana_triangle[n - 1][k - 1] + narayana_triangle[n - 1][k] + narayana_triangle[n - 1][k + 1];
-        }
-    }
-
-    // Вывод чисел Нараяны
-    for (int n = 0; n < MAX_ROWS; ++n) {
-        for (int k = 0; k <= n; ++k) {
-            std::cout << narayana_triangle[n][k] << " ";
-        }
-        std::cout << std::endl;
-    }
+    std::cout << "Narayana(" << n << ", " << k << ") = " << narayana(n, k) << std::endl;
 
     return 0;
 }
