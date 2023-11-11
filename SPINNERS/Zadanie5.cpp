@@ -3,7 +3,7 @@ using namespace std;
 
 int main () {
     setlocale(LC_ALL, "");
-	int sv, sh;
+	long long sv, sh;
 	cout << "Введите ко-во свободных мест и детей: ";
 	cin >> sv >> sh;
 	while (sh != 1) {
