@@ -1,38 +1,41 @@
 #include <iostream>
 
-using namespace std;
-
-// Function to calculate the Cukerman number
-int cukermanNumber(int n) {
-    if (n == 0) return 1;
-
-    int result = 0;
-    for (int k = 0; k < n; ++k) {
-        result += cukermanNumber(k) * cukermanNumber(n - 1 - k);
+// Функция для вычисления произведения цифр числа
+int productOfDigits(int num) {
+    int product = 1;
+    while (num != 0) {
+        product *= num % 10;
+        num /= 10;
     }
-
-    return result;
+    return product;
 }
 
-// Function to print Cukerman numbers in the specified range
+// Функция для проверки, является ли число Цукермана
+bool isCukermanNumber(int num) {
+    return (num % productOfDigits(num)) == 0;
+}
+
+// Функция для вывода чисел Цукермана в заданном интервале
 void printCukermanNumbers(int start, int end) {
-    cout << "Cukerman numbers in the range [" << start << ", " << end << "]: ";
+    std::cout << "Числа Цукермана в интервале [" << start << ", " << end << "]: ";
     for (int i = start; i <= end; ++i) {
-        cout << cukermanNumber(i) << " ";
+        if (isCukermanNumber(i)) {
+            std::cout << i << " ";
+        }
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 int main() {
     int start, end;
 
-    // Input the range
-    cout << "Enter the starting value of the range: ";
-    cin >> start;
-    cout << "Enter the ending value of the range: ";
-    cin >> end;
+    // Ввод интервала
+    std::cout << "Введите начальное значение интервала: ";
+    std::cin >> start;
+    std::cout << "Введите конечное значение интервала: ";
+    std::cin >> end;
 
-    // Print Cukerman numbers in the specified range
+    // Вывод чисел Цукермана в заданном интервале
     printCukermanNumbers(start, end);
 
     return 0;
