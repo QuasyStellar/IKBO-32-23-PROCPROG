@@ -1,21 +1,14 @@
-#Требуртсч оптимизация, т.к для больших чисел будет слишком долго выполняться
-
 #include <iostream>
 using namespace std;
-
 int main() {
-	setlocale(LC_ALL, "");
-	int n, m, ans = 0;
-	cout << "Введите числа n и m 'n m': ";
-	cin >> n >> m;
-	for (int st = 0; st < n; st++) {
-		for (int st2 = st; st2 < n; st2++) {
-			for (int str = 0; str < m; str++) {
-				for (int str1 = str; str1< m; str1++) {
-					ans++;
-				}
-			}
-		}
-	}
-	cout << "Кол-во прямоугольников: "<< ans << endl;
+    setlocale(0, "");
+    long long int llnN, llnM;
+    cout << "Введите N и M: \n"; cin >> llnN >> llnM;
+    if (llnN > 0 and llnM > 0 and llnN <= 75000 and llnM <= 75000) {
+        long long int llnRectangles = (llnN * (llnN + 1) / 2) * (llnM * (llnM + 1) / 2);
+        cout << llnRectangles << endl;
+    }
+    else {
+        cout << "Ошибка ввода...";
+    }
 }
