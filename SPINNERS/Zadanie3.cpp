@@ -1,14 +1,23 @@
 #include <iostream>
+
 using namespace std;
+
 int main() {
-    setlocale(0, "");
-    long long int llnN, llnM;
-    cout << "Введите N и M: \n"; cin >> llnN >> llnM;
-    if (llnN > 0 and llnM > 0 and llnN <= 75000 and llnM <= 75000) {
-        long long int llnRectangles = (llnN * (llnN + 1) / 2) * (llnM * (llnM + 1) / 2);
-        cout << llnRectangles << endl;
+    setlocale(LC_ALL, "");
+    int n, m;
+    cout << "Введите значение m и n: ";
+    cin >> n >> m;
+
+    int x = 0;
+    int y = 0;
+
+    for (int x1 = 0; x1 < n; ++x1) {
+        x += n - x1;
     }
-    else {
-        cout << "Ошибка ввода...";
+
+    for (int y1 = 0; y1 < m; ++y1) {
+        y += m - y1;
     }
+
+    cout << "Результат: " << ax * y << endl;
 }
