@@ -62,4 +62,11 @@ int main() {
             cout << endl;
         }
     }
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 6; ++j) {
+            delete[] zapis[i][j];
+        }
+        delete[] zapis[i];
+    }
+    delete[] zapis;
 }
