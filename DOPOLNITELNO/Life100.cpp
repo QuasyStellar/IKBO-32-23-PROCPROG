@@ -3,26 +3,28 @@
 
 using namespace std;
 
-
-void createInitialGeneration() {
-    ofstream file("work.dat");
-    for (int i = 0; i < 21; ++i) {
-        for (int j = 0; j < 21; ++j) {
-            file << (rand() % (12 + 1)) << ' ';
-        }
-        file << endl;
-    }
-}
-
 void fillGeneration(int ind, int** generation) {
-    const char* filename = (ind == 0) ? "work.dat" : "work.out";
-    ifstream file(filename);
-    for (int i = 0; i < 21; ++i) {
-        for (int j = 0; j < 21; ++j) {
-            file >> generation[i][j];
+    if (ind){
+        ifstream file("work.out");
+        for (int i = 0; i < 21; ++i) {
+            for (int j = 0; j < 21; ++j) {
+                file >> generation[i][j];
+            }
         }
+        file.close();
     }
-    file.close();
+    else {
+        ofstream file("work.dat");
+        for (int i = 0; i < 21; ++i) {
+            for (int j = 0; j < 21; ++j) {
+                generation[i][j] = (rand() % (12 + 1));
+                file << generation[i][j];
+            }
+            file << endl;
+        }
+        file.close();
+    }
+    
 }
 
 void outfile(int** currentGeneration) {
@@ -33,6 +35,7 @@ void outfile(int** currentGeneration) {
         }
         file << endl;
     }
+    file.close();
 }
 
 void printGeneration(int** generation) {
@@ -84,7 +87,6 @@ int countAliveMicrobes(int** generation) {
 int main() {
     setlocale(LC_ALL, "");
 
-    createInitialGeneration();
 
     int generations;
     cout << "Кол-во поколений: ";
@@ -96,9 +98,10 @@ int main() {
         currentGeneration[i] = new int[21]();
     }
 
-    fillGeneration(0, currentGeneration);
+    
 
     for (int gen = 1; gen <= generations; ++gen) {
+        fillGeneration(gen-1, currentGeneration);
         cout << "Поколение " << gen << ":\n";
         printGeneration(currentGeneration);
 
