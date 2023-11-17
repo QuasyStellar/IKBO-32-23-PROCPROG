@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <ctime>
 
 using namespace std;
 
@@ -50,9 +49,9 @@ void nextGeneration(int** currentGeneration) {
         for (int j = 0; j < 21; ++j) {
             int neighbors = 0;
             if (i and currentGeneration[i - 1][j] != 0) { neighbors += 1; }
-            if (i<20 and currentGeneration[i + 1][j] != 0) { neighbors += 1; }
+            if (i < 20 and currentGeneration[i + 1][j] != 0) { neighbors += 1; }
             if (j and currentGeneration[i][j - 1] != 0) { neighbors += 1; }
-            if (j <20 and currentGeneration[i][j + 1] != 0) { neighbors += 1; }
+            if (j < 20 and currentGeneration[i][j + 1] != 0) { neighbors += 1; }
 
             if (currentGeneration[i][j] > 0 && (neighbors == 2 || neighbors == 3) && currentGeneration[i][j] != 12) {
                 currentGeneration[i][j] = currentGeneration[i][j] + 1;
@@ -84,7 +83,6 @@ int countAliveMicrobes(int** generation) {
 
 int main() {
     setlocale(LC_ALL, "");
-    srand(time(0));
 
     createInitialGeneration();
 
