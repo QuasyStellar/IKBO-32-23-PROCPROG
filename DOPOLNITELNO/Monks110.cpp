@@ -26,7 +26,7 @@ int findCommonTeacher(int monk1, int monk2) {
     int teacher1 = monk1;
     int teacher2 = monk2;
 
-    while (teacher1 != teacher2) {
+    while (teacher1 != teacher2 or teacher1 == monk1 or teacher1 == monk2) {
         if (teacher1 == 0 || teacher2 == 0) {
             cout << ((teacher1 == 0) ? monk1 : monk2) << " – не монах\n";
             return 0;
