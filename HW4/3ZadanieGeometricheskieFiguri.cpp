@@ -42,7 +42,7 @@ int main() {
         float st1, st2, st3;
         cout << "Введите все стороны треугольника: ";
         cin >> st1 >> st2 >> st3;
-        if (st1 > 0 and st2 > 0 and st3 > 0 and st1 + st2 > st3 or st1 + st3 > st2 or st2 + st3 > st1) {
+        if (st1 > 0 and st2 > 0 and st3 > 0 and st1 + st2 > st3 and st1 + st3 > st2 and st2 + st3 > st1) {
             area = triangle(st1, st2, st3);
         }
         else {
